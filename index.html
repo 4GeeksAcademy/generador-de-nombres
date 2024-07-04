@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generador de Dominio</title>
-</head>
-<body>
-  <h1>Generated Domains</h1>
-  <ul id="domains-list">
-  </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Dominio</title>
+  </head>
+  <body>
+    <h1>Generador de Dominio</h1>
+    <ul id="domains-list"></ul>
 
-  <script>
-    let pronoun = ['the', 'our', 'his'];
-    let adj = ['great', 'big', 'amazing'];
-    let noun = ['jogger', 'racoon', 'dog', 'merchant', 'driver'];
+    <script>
+      let pronoun = ["the", "our", "his"];
+      let adj = ["great", "big", "amazing"];
+      let noun = ["jogger", "racoon", "dog", "merchant", "driver"];
 
-    function generateDomains() {
-      let domainsList = document.getElementById('domains-list');
-      domainsList.innerHTML = ''; 
-      
-      for(let i = 0; i < pronoun.length; i++) {
-        for(let j = 0; j < adj.length; j++) {
-          for(let k = 0; k < noun.length; k++) {
-            let domain = pronoun[i] + adj[j] + noun[k] + '.com';
-            let listItem = document.createElement('li');
-            listItem.textContent = domain;
-            domainsList.appendChild(listItem);
+      function generateDomains() {
+        let domainsList = document.getElementById("domains-list");
+        domainsList.innerHTML = "";
+
+        for (let i = 0; i < pronoun.length; i++) {
+          for (let j = 0; j < adj.length; j++) {
+            for (let k = 0; k < noun.length; k++) {
+              let domain = pronoun[i] + adj[j] + noun[k] + ".com";
+              let listItem = document.createElement("li");
+              listItem.textContent = domain;
+              domainsList.appendChild(listItem);
+            }
           }
         }
       }
-    }
 
-    generateDomains();
-  </script>
-</body>
+      generateDomains();
+    </script>
+  </body>
 </html>
